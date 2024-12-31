@@ -13,7 +13,7 @@ import java.time.Duration;
 
 public class LoginAutomationTest {
     @Test
-    public void testLogin() {
+    void testLogin() {
         // Set up ChromeOptions
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
