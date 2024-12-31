@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.time.Duration;
 
-public class LoginAutomationTest {
+public LoginAutomationTest {
     @Test
     void testLogin() {
         // Set up ChromeOptions
