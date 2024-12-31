@@ -17,7 +17,7 @@ public class LoginAutomationTest {
     // Setup method to initialize WebDriver before each test
     @BeforeEach
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");  // Update path
+        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver-win64\\");  
         driver = new ChromeDriver();
     }
 
