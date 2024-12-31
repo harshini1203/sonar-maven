@@ -22,7 +22,7 @@ pipeline {
 
         stage('Run Automation Tests') {
             steps {
-                // sh "${MAVEN_HOME}/bin/mvn test"
+                sh "${MAVEN_HOME}/bin/mvn test"
             }
         }
 
