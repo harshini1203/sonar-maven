@@ -19,6 +19,12 @@ pipeline {
                 bat 'mvn clean package'
             }
         }
+
+        stage('Generate Code Coverage Report') {
+            steps {
+                bat 'mvn verify' // JaCoCo report is generated during the verify phase
+            }
+        }
         
         stage('Run Automation Tests') {
             steps {
