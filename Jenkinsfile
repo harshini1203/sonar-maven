@@ -26,12 +26,12 @@ pipeline {
             }
         }
 
-        stage('Generate Coverage Report') {
+       stage('Generate Coverage Report') {
             steps {
-                // Use a tool like Jacoco to generate the coverage report
-                bat 'mvn jacoco:report'
+                // Ensure JaCoCo runs during the test phase and generates the XML report
+                bat 'mvn clean test verify'
             }
-        }
+}
 
         stage('SonarQube Analysis') {
             steps {
