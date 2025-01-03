@@ -26,12 +26,11 @@ pipeline {
             }
         }
 
-       stage('Generate Coverage Report') {
-            steps {
-                // Ensure JaCoCo runs during the test phase and generates the XML report
-                bat 'mvn clean test verify'
-            }
-}
+        stage('Run Tests and Coverage') {
+        steps {
+            bat 'mvn clean verify'
+        }
+    }
 
       stage('SonarQube Analysis') {
     steps {
