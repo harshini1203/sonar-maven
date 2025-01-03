@@ -33,26 +33,23 @@ pipeline {
             }
 }
 
-        stage('SonarQube Analysis') {
-            steps {
-                withSonarQubeEnv('sonarqube') {
-                    bat """
-                        mvn sonar:sonar ^
-                        -Dsonar.projectKey=sonar-maven-assessment ^
-                        -Dsonar.java.binaries=target/classes ^
-                        -Dsonar.java.test.binaries=target/test-classes ^
-                        -Dsonar.host.url=http://localhost:9000 ^
-                        -Dsonar.login=%SONAR_TOKEN% ^
-                        -Dsonar.sources=src/main/java ^
-                        -Dsonar.tests=src/test/java ^
-                        -Dsonar.junit.reportPaths=target/surefire-reports ^
-                        -Dsonar.jacoco.reportPaths=target/site/jacoco/jacoco.xml ^
-                        -Dsonar.pmd.reportPaths=target/pmd-duplicates.xml ^
-                        -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
-                    """
-                }
-            }
+      stage('SonarQube Analysis') {
+    steps {
+        withSonarQubeEnv('sonarqube') {
+            bat """
+                mvn sonar:sonar ^
+                -Dsonar.projectKey=sonar-maven-assessment ^
+                -Dsonar.java.binaries=target/classes ^
+                -Dsonar.java.test.binaries=target/test-classes ^
+                -Dsonar.host.url=http://localhost:9000 ^
+                -Dsonar.login=%SONAR_TOKEN% ^
+                -Dsonar.sources=src/main/java ^
+                -Dsonar.tests=src/test/java ^
+                -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
+            """
+        }
     }
+}
 
     }
 
