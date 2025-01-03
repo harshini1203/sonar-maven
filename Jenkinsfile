@@ -47,7 +47,8 @@ pipeline {
                         -Dsonar.tests=src/test/java ^
                         -Dsonar.junit.reportPaths=target/surefire-reports ^
                         -Dsonar.jacoco.reportPaths=target/site/jacoco/jacoco.xml ^
-                        -Dsonar.pmd.reportPaths=target/pmd-duplicates.xml
+                        -Dsonar.pmd.reportPaths=target/pmd-duplicates.xml ^
+                        -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
                     """
                 }
             }
